@@ -1,5 +1,6 @@
 import requests
-from requests.api import head
+# file to run tests
+from functions import trello
 
-request = requests.post('http://192.168.15.190:5070/smartQuestion', json={"test":"test"}, headers={'Accept': 'application/json'})
-print(dir(request))
+trello = trello.Trello("AlexaBoard")
+print(trello.Board.lists[0].cards[0])

@@ -1,42 +1,49 @@
 from typing import List, TypedDict, Union
 from datetime import datetime
+import json
 
-class labels(TypedDict):
-    green: str
-    yellow: str
-    orange: str
-    red: str
-    purple: str
-    blue: str
-    sky: str
-    lime: str
-    pink: str
-    black: str
+class LabelsModel():
+    
+    def __init__(self, *args, **kwargs) -> None:
+        for i in kwargs.keys():
+            exec(f'self.{i} = kwargs["{i}"]')
+    
+    @classmethod
+    def fromJson(cls, jsonInput):
+        if (type(jsonInput) == str):
+            return cls(**json.loads(jsonInput))
+        elif (type(jsonInput) == dict):
+            return cls(**jsonInput)
+            
     
 class CheckListItemModel:
     id: str
     name: str    
     dueDate: Union[datetime, None]
-    state: bool = False
+    checked: bool = False
 
 class CheckListModel:
-    id: str
+    checkListId: str
     name: str
     itens: List[CheckListItemModel]
 
 class CardModel:
-    id: str
+    cardId: str
     name: str
     desc: str
+    listid: str
     dueDate: Union[datetime, None]
     checklists: List[CheckListModel]
     
     def __init__(self):
         self.closed: bool = False
         self.dueComplete: bool = False
+        
+    def __str__(self) -> str:
+        return '{"cardId":%s, "name": %s, "desc": %s, "listid": %s, "dueDate": %s}' % (self.cardId, self.name, self.desc, self.listid, self.dueDate)
 
 class ListsModel:
-    id: str
+    listId: str
     name: str 
     idBoard: str
     cards: List[CardModel]
@@ -44,11 +51,10 @@ class ListsModel:
     def __init__(self):
         self.closed: bool = False
 
-class BoardModel:
-    id: str
+class BoardModel():
+    boardId: str
     name: str
-    lastModified: datetime
-    labels: labels
-    lists: List[ListsModel]
+    labels: LabelsModel
+    lists: List[ListsModel] = [ListsModel()]
         
         

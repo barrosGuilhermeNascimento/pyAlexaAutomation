@@ -1,13 +1,8 @@
 from flask import Flask, Response, request
-from datetime import datetime, time, timedelta
-from models import universityModel
 from functions import university, initialization
 
 classFile = initialization.Init()
-
-
 app = Flask(__name__)
-
 
 # Universiry Controllers
 @app.route("/university/nextClass")
@@ -29,7 +24,7 @@ def nowClass():
 @app.route("/university/smartQuestion", methods=["POST"])
 def smartQuestions():
     try:
-        funcReponse = university.GetClassesDayOrder()
+        funcReponse = university.GetClassesDayOrder(request.args)
         return Response(funcReponse, 200)
     except Exception as err:
         return Response(f"There was an error in your request: {err}", 500)

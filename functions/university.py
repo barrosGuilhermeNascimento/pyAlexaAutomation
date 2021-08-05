@@ -61,7 +61,7 @@ def currentClass(classFile: List[universityModel.DayClassesModel]):
     return "You're not currently in class"
     
     
-def GetClassesDayOrder(args: request.args, classFile: List[universityModel.DayClassesModel]):
+def GetClassesDayOrder(args , classFile: List[universityModel.DayClassesModel]):
     nowDateTime = datetime.now()
     weekDay = nowDateTime.isoweekday()
     day: str = args.get("day").lower() 
