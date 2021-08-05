@@ -1,0 +1,61 @@
+{
+  "1": {
+    "07:00": {
+      "initials": "ISA102",
+      "name": "Auditoria de Sistemas de Informações",
+      "teacher": "NILTON STRINGASCI MOREIRA",
+      "duration": "3:30"
+    },
+    "10:40": {
+      "initials": "ISG009",
+      "name": "Information Security Policies",
+      "teacher": "IZAR MUNHOZ ALVARES",
+      "duration": "01:40"
+    },
+    "20:50": {
+      "initials": "TTG101",
+      "name": "Projeto de Trabalho de Graduação I",
+      "teacher": "EDNA MATARUCO DUARTE",
+      "duration": "01:40"
+    }
+  },
+  "2": {
+    "19:00": {
+      "initials": "ISG011",
+      "name": "Security in Operating Systems and Computer Networks I",
+      "teacher": "HUGO LEONARDO FERRER REBELLO",
+      "duration": "03:30"
+    }
+  },
+  "3": {
+    "07:00": {
+      "initials": "IRC015",
+      "name": "Computer Network Management",
+      "teacher": "ISMAEL MOURA PAREDE",
+      "duration": "06:30"
+    },
+    "19:00": {
+      "initials": "CEE002",
+      "name": "Entrepreneurship",
+      "teacher": "SONIA CRISTINA MENOCE",
+      "duration": "01:40"
+    },
+    "20:50": {
+      "initials": "IRC200",
+      "name": "Computer Networks Project",
+      "teacher": "KLEBER DA SILVA DIVINO",
+      "duration": "01:40"
+    }
+  },
+  "4": {
+    "19:00": {
+      "initials": "ISG010",
+      "name": "Incident Response and Business Continuity Plan",
+      "teacher": "EDNA MATARUCO DUARTE",
+      "duration": "03:30"
+    }
+  },
+  "5": {},
+  "6": {},
+  "7": {}
+}
